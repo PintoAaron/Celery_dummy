@@ -1,0 +1,6 @@
++ Get your redis server up and running
++ Install the dependencies with`pip install -r requirements.txt`
++ Run the server with `uvicorn main:app --reload`         ---This will run start the fastapi application on port 8000
++ Run the celery worker with `celery -A celery_worker worker --loglevel=info -P gevent`  ---This will start the celery worker
++ Run the celery beat with `celery -A celery_worker beat --loglevel=info`  ---This will start the celery beat
++ Run the celery flower with `celery -A celery_worker flower --broker=redis://localhost:6379/0`  ---This will start the celery flower
